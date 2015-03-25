@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Carousel</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/carousel.css"/>
+</head>
+<body>
+<div class="carousel-container">
+    <a class="btn-info btn-sm" href="javascript:void(0)" id="previous">Previous</a>
+    <ul class="carousel-nav">
+        <li class="show"><img id="img_01" src="img/alila/thumb-01.jpg"/></li>
+        <li class="show"><img id="img_02" src="img/alila/thumb-02.jpg"/></li>
+        <li class="show"><img id="img_03" src="img/alila/thumb-03.jpg"/></li>
+        <li class="show"><img id="img_04" src="img/alila/thumb-04.jpg"/></li>
+        <li class="show"><img id="img_05" src="img/alila/thumb-05.jpg"/></li>
+        <li class="hide"><img id="img_06" src="img/alila/thumb-06.jpg"/></li>
+        <li class="hide"><img id="img_07" src="img/alila/thumb-07.jpg"/></li>
+        <li class="hide"><img id="img_08" src="img/alila/thumb-08.jpg"/></li>
+        <li class="hide"><img id="img_09" src="img/alila/thumb-09.jpg"/></li>
+        <li class="hide"><img id="img_10" src="img/alila/thumb-10.jpg"/></li>
+        <li class="hide"><img id="img_11" src="img/alila/thumb-11.jpg"/></li>
+        <li class="hide"><img id="img_12" src="img/alila/thumb-12.jpg"/></li>
+        <li class="hide"><img id="img_13" src="img/alila/thumb-13.jpg"/></li>
+        <li class="hide"><img id="img_14" src="img/alila/thumb-14.jpg"/></li>
+        <li class="hide"><img id="img_15" src="img/alila/thumb-15.jpg"/></li>
+        <li class="hide"><img id="img_16" src="img/alila/thumb-16.jpg"/></li>
+        <li class="hide"><img id="img_17" src="img/alila/thumb-17.jpg"/></li>
+        <li class="hide"><img id="img_18" src="img/alila/thumb-18.jpg"/></li>
+        <li class="hide"><img id="img_19" src="img/alila/thumb-19.jpg"/></li>
+        <li class="hide"><img id="img_20" src="img/alila/thumb-20.jpg"/></li>
+    </ul>
+    <a class="btn-info btn-sm" href="javascript:void(0)" id="next">Next</a>
+</div>
+<script src="lib/jquery-1.11.2.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="src/carousel.js"></script>
+</body>
+</html>

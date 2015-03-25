@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Carousel</title>
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="./css/carousel.css"/>
+</head>
+<body>
+<div class="carousel-container">
+    <a class="btn-info btn-sm" href="javascript:void(0)" id="previous"><b><</b></a>
+    <ul class="carousel-nav">
+        <li class="show"><img id="img_01" src="./img/thumb-01.jpg"/></li>
+        <li class="show"><img id="img_02" src="./img/thumb-02.jpg"/></li>
+        <li class="show"><img id="img_03" src="./img/thumb-03.jpg"/></li>
+        <li class="show"><img id="img_04" src="./img/thumb-04.jpg"/></li>
+        <li class="show"><img id="img_05" src="./img/thumb-05.jpg"/></li>
+        <li class="hide"><img id="img_06" src="./img/thumb-06.jpg"/></li>
+        <li class="hide"><img id="img_07" src="./img/thumb-07.jpg"/></li>
+        <li class="hide"><img id="img_08" src="./img/thumb-08.jpg"/></li>
+        <li class="hide"><img id="img_09" src="./img/thumb-09.jpg"/></li>
+        <li class="hide"><img id="img_10" src="./img/thumb-10.jpg"/></li>
+        <li class="hide"><img id="img_11" src="./img/thumb-11.jpg"/></li>
+        <li class="hide"><img id="img_12" src="./img/thumb-12.jpg"/></li>
+        <li class="hide"><img id="img_13" src="./img/thumb-13.jpg"/></li>
+        <li class="hide"><img id="img_14" src="./img/thumb-14.jpg"/></li>
+        <li class="hide"><img id="img_15" src="./img/thumb-15.jpg"/></li>
+        <li class="hide"><img id="img_16" src="./img/thumb-16.jpg"/></li>
+        <li class="hide"><img id="img_17" src="./img/thumb-17.jpg"/></li>
+        <li class="hide"><img id="img_18" src="./img/thumb-18.jpg"/></li>
+        <li class="hide"><img id="img_19" src="./img/thumb-19.jpg"/></li>
+        <li class="hide"><img id="img_20" src="./img/thumb-20.jpg"/></li>
+    </ul>
+    <a class="btn-info btn-sm" href="javascript:void(0)" id="next"><b>></b></a>
+</div>
+
+<div class="modal fade" id="myModal"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button  type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <img id="popUp" src="" alt="Image"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./lib/jquery-1.11.2.min.js"></script>
+<script src="./lib/bootstrap.min.js"></script>
+<script src="./src/carousel.js"></script>
+</body>
+</html>

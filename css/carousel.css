@@ -1,0 +1,35 @@
+ul.carousel-nav {
+    list-style-type: none;
+    margin: 15% 30%;
+}
+
+ul.carousel-nav > li {
+    float: left;
+    margin: 0 2px;
+}
+
+div.carousel-container > a {
+    float: left;
+    margin: 22px 0;
+    text-decoration: none;
+}
+
+div.carousel-container > a#previous {
+    margin-left: 403px;
+}
+
+ul.carousel-nav > li.show {
+    visibility: visible;
+}
+
+ul.carousel-nav > li.hide {
+    display: none;
+}
+
+ul.carousel-nav > li:hover {
+    cursor: pointer;
+}
+
+img#popUp {
+    margin: 0 4%;
+}
