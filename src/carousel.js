@@ -1,24 +1,34 @@
-(function () {
-
-    $('#next').click(function () {
-        if (!$('ul.carousel-nav> li:last-child').is(':visible')) {
-            var lastVisibleLi = parseInt($('ul.carousel-nav>li').find(':visible').last().attr('id').match("[0-9]{2}")[0]);
-            $('ul.carousel-nav li:eq(' + (lastVisibleLi - 5) + ')').removeClass('show').addClass('hide');
-            $('ul.carousel-nav li:eq(' + lastVisibleLi + ')').removeClass('hide').addClass('show');
+(function ($) {
+    var SELECTORS = {
+        nextButton: "#next",
+        previousButton: "#previous",
+        nthChild: "ul.carousel-nav li:eq",
+        popUpImage: "img#popUp",
+        modal: "#myModal",
+        getNthChild: function (n) {
+            return this.nthChild + '(' + n + ')';
+        }
+    };
+    var CONSTANT = {
+        showClassName: "show",
+        visibleImageCount: 5
+    };
+    $(SELECTORS.nextButton).click(function () {
+        if (CONSTANT.visibleImageCount >= 5 && CONSTANT.visibleImageCount < 20) {
+            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount - 5)).removeClass(CONSTANT.showClassName);
+            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount)).addClass(CONSTANT.showClassName);
+            CONSTANT.visibleImageCount++;
         }
     });
-
-    $('#previous').click(function () {
-        if (!$('ul.carousel-nav> li:first-child').is(':visible')) {
-            var firstVisibleLi = parseInt($('ul.carousel-nav>li').find(':visible').first().attr('id').match("[0-9]{2}")[0]);
-            $('ul.carousel-nav li:eq(' + (firstVisibleLi + 3) + ')').removeClass('show').addClass('hide');
-            $('ul.carousel-nav li:eq(' + (firstVisibleLi - 2) + ')').removeClass('hide').addClass('show');
+    $(SELECTORS.previousButton).click(function () {
+        if (CONSTANT.visibleImageCount > 5) {
+            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount - 1)).removeClass(CONSTANT.showClassName);
+            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount - 6)).addClass(CONSTANT.showClassName);
+            CONSTANT.visibleImageCount--;
         }
     });
-
     $('ul.carousel-nav > li').click(function () {
-        $("img#popUp").attr('src', $(this).find('img').attr('src').replace('thumb-', ''));
-        $('#myModal').modal('show');
+        $(SELECTORS.popUpImage).attr('src', $(this).attr('data-image'));
+        $(SELECTORS.modal).modal('show');
     });
-
-})();
+})(jQuery);

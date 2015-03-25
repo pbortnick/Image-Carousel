@@ -3,27 +3,24 @@ ul.carousel-nav {
     margin: 15% 30%;
 }
 
-ul.carousel-nav > li {
-    float: left;
-    margin: 0 2px;
-}
-
 div.carousel-container > a {
     float: left;
-    margin: 22px 0;
+    margin: 1.6% 0;
     text-decoration: none;
 }
 
 div.carousel-container > a#previous {
-    margin-left: 403px;
+    margin-left: 31%;
+}
+
+ul.carousel-nav > li {
+    display: none;
+    float: left;
+    margin: 0 2px;
 }
 
 ul.carousel-nav > li.show {
-    visibility: visible;
-}
-
-ul.carousel-nav > li.hide {
-    display: none;
+    display: block;
 }
 
 ul.carousel-nav > li:hover {
