@@ -1,11 +1,11 @@
-.idea
+*.idea
 .classpath
 .project
 *.class
 *.ipr
 *.iws
 target/
-.iml
+*.iml
 *.out
 *.log
 test/
