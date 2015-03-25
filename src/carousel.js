@@ -2,6 +2,7 @@
     var SELECTORS = {
         nextButton: "#next",
         previousButton: "#previous",
+        allChild: "ul.carousel-nav > li",
         nthChild: "ul.carousel-nav li:eq",
         popUpImage: "img#popUp",
         modal: "#myModal",
@@ -27,7 +28,7 @@
             CONSTANT.visibleImageCount--;
         }
     });
-    $('ul.carousel-nav > li').click(function () {
+    $(SELECTORS.allChild).click(function () {
         $(SELECTORS.popUpImage).attr('src', $(this).attr('data-image'));
         $(SELECTORS.modal).modal('show');
     });
