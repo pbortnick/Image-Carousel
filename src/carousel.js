@@ -12,20 +12,35 @@
     };
     var CONSTANT = {
         showClassName: "show",
-        visibleImageCount: 5
+        disableClassName: "disable",
+        visibleImageCount: 5,
+        lastVisibleImageCount: 5,
+        totalImageCount: 20
     };
     $(SELECTORS.nextButton).click(function () {
-        if (CONSTANT.visibleImageCount >= 5 && CONSTANT.visibleImageCount < 20) {
-            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount - 5)).removeClass(CONSTANT.showClassName);
-            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount)).addClass(CONSTANT.showClassName);
-            CONSTANT.visibleImageCount++;
+        if (CONSTANT.lastVisibleImageCount === (CONSTANT.totalImageCount - 1)) {
+            $(SELECTORS.nextButton).addClass(CONSTANT.disableClassName);
+        }
+        else if (CONSTANT.lastVisibleImageCount === CONSTANT.visibleImageCount) {
+            $(SELECTORS.previousButton).removeClass(CONSTANT.disableClassName);
+        }
+        if (CONSTANT.lastVisibleImageCount >= CONSTANT.visibleImageCount && CONSTANT.lastVisibleImageCount < CONSTANT.totalImageCount) {
+            $(SELECTORS.getNthChild(CONSTANT.lastVisibleImageCount - CONSTANT.visibleImageCount)).removeClass(CONSTANT.showClassName);
+            $(SELECTORS.getNthChild(CONSTANT.lastVisibleImageCount)).addClass(CONSTANT.showClassName);
+            CONSTANT.lastVisibleImageCount++;
         }
     });
     $(SELECTORS.previousButton).click(function () {
-        if (CONSTANT.visibleImageCount > 5) {
-            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount - 1)).removeClass(CONSTANT.showClassName);
-            $(SELECTORS.getNthChild(CONSTANT.visibleImageCount - 6)).addClass(CONSTANT.showClassName);
-            CONSTANT.visibleImageCount--;
+        if (CONSTANT.lastVisibleImageCount === (CONSTANT.visibleImageCount + 1)) {
+            $(SELECTORS.previousButton).addClass(CONSTANT.disableClassName);
+        }
+        else if (CONSTANT.lastVisibleImageCount === CONSTANT.totalImageCount) {
+            $(SELECTORS.nextButton).removeClass(CONSTANT.disableClassName);
+        }
+        if (CONSTANT.lastVisibleImageCount > CONSTANT.visibleImageCount) {
+            $(SELECTORS.getNthChild(CONSTANT.lastVisibleImageCount - 1)).removeClass(CONSTANT.showClassName);
+            $(SELECTORS.getNthChild(CONSTANT.lastVisibleImageCount - (CONSTANT.visibleImageCount + 1))).addClass(CONSTANT.showClassName);
+            CONSTANT.lastVisibleImageCount--;
         }
     });
     $(SELECTORS.allChild).click(function () {

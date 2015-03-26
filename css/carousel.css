@@ -30,3 +30,8 @@ ul.carousel-nav > li:hover {
 img#popUp {
     margin: 0 4%;
 }
+
+a.disable {
+    pointer-events: none;
+    cursor: default;
+}
