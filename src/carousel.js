@@ -13,6 +13,7 @@
     var CONSTANT = {
         showClassName: "show",
         disableClassName: "disable",
+        imageSrcAttribute: "data-image",
         visibleImageCount: 5,
         lastVisibleImageCount: 5,
         totalImageCount: 20
@@ -44,7 +45,7 @@
         }
     });
     $(SELECTORS.allChild).click(function () {
-        $(SELECTORS.popUpImage).attr('src', $(this).attr('data-image'));
-        $(SELECTORS.modal).modal('show');
+        $(SELECTORS.popUpImage).attr('src', $(this).attr(CONSTANT.imageSrcAttribute));
+        $(SELECTORS.modal).modal(CONSTANT.showClassName);
     });
 })(jQuery);

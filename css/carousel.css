@@ -31,7 +31,8 @@ img#popUp {
     margin: 0 4%;
 }
 
-a.disable {
+div.carousel-container > a.disable {
     pointer-events: none;
     cursor: default;
+    background-color: #d9534f;
 }
